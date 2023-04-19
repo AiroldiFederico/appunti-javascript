@@ -144,11 +144,17 @@ console.log("Hai inserito: " + value);
 In JavaScript, ci sono diversi operatori aritmetici che possono essere utilizzati per eseguire operazioni matematiche. Ecco una lista degli operatori aritmetici in JavaScript:
 
 `+`: Addizione. Esempio:` let sum = 3 + 2; // sum è 5`
+
 `-`: Sottrazione. Esempio: `let difference = 3 - 2; // difference è 1`
+
 `*`: Moltiplicazione. Esempio: `let product = 3 * 2; // product è 6`
+
 `/`: Divisione. Esempio: `let quotient = 3 / 2; // quotient è 1.5`
+
 `%`: Modulo (resto della divisione). Esempio: `let remainder = 3 % 2; // remainder è 1`
+
 `++`: Incremento. Esempio: `let x = 3; x++; // x è ora 4`
+
 `--`: Decremento. Esempio: `let x = 3; x--; // x è ora 2`
 
 
@@ -411,6 +417,36 @@ fruits.forEach(function (fruit) {
 // orange
 ```
 
+### METODI DEGLI ARRAY
+
+Ci sono molti metodi disponibili per gli array in JavaScript. Alcuni dei metodi più comuni sono:
+
+- `concat()`: unisce due o più array e restituisce un nuovo array.
+- `every()`: verifica se tutti gli elementi di un array soddisfano una condizione specificata da una funzione fornita.
+- `filter()`: crea un nuovo array con tutti gli elementi di un array che soddisfano una condizione specificata da una funzione fornita.
+- `find()`: restituisce il valore del primo elemento di un array che soddisfa una condizione specificata da una funzione fornita.
+- `findIndex()`: restituisce l'indice del primo elemento di un array che soddisfa una condizione specificata da una funzione fornita.
+- `forEach()`: esegue una funzione fornita per ogni elemento di un array.
+- `includes()`: determina se un array contiene un elemento specificato.
+- `indexOf()`: restituisce l'indice del primo elemento di un array uguale a un valore specificato.
+- `join()`: unisce tutti gli elementi di un array in una stringa.
+- `lastIndexOf()`: restituisce l'indice dell'ultimo elemento di un array uguale a un valore specificato.
+- `map()`: crea un nuovo array con i risultati della chiamata di una funzione fornita su ogni elemento di un array.
+- `pop()`: rimuove l'ultimo elemento di un array e restituisce quel valore.
+- `push()`: aggiunge uno o più elementi alla fine di un array e restituisce la nuova lunghezza dell'array.
+- `reduce()`: applica una funzione a un accumulatore e a ogni elemento di un array (da sinistra a destra) per ridurlo a un singolo valore.
+- `reduceRight()`: applica una funzione a un accumulatore e a ogni elemento di un array (da destra a sinistra) per ridurlo a un singolo valore.
+- `reverse()`: inverte l'ordine degli elementi di un array.
+- `shift()`: rimuove il primo elemento di un array e restituisce quel valore.
+- `slice()`: restituisce una porzione superficiale di un array in un nuovo array.
+- `some()`: verifica se almeno uno degli elementi di un array soddisfa una condizione specificata da una funzione fornita.
+- `sort()`: ordina gli elementi di un array in loco e restituisce l'array ordinato.
+- `splice()`: aggiunge/rimuove elementi da/in un array e restituisce gli elementi rimossi.
+- `toString()`: converte un array in una stringa e restituisce il risultato.
+- `unshift()`: aggiunge uno o più elementi all'inizio di un array e restituisce la nuova lunghezza dell'array.
+
+Questi sono solo alcuni dei metodi disponibili per gli array in JavaScript. Puoi trovare una lista completa dei metodi degli array nella documentazione ufficiale di JavaScript.
+
 ---
 
 ## FUNZIONI TEMPORALI
@@ -444,6 +480,225 @@ setTimeout(function() {
   clearInterval(intervalId);
 }, 10000);
 ```
+---
+
+##OGGETTI
+
+Gli oggetti in JavaScript sono contenitori per valori con nome chiamati proprietà. Le proprietà possono essere di qualsiasi tipo di dato, inclusi altri oggetti e funzioni. Quando una proprietà è una funzione, viene chiamata metodo1.
+
+Gli oggetti possono essere creati utilizzando la sintassi letterale degli oggetti o il costruttore Object(). Ad esempio, puoi creare un oggetto con la sintassi letterale come segue:
+
+```JS
+const persona = {
+  nome: "Mario",
+  cognome: "Rossi",
+  eta: 30
+};
+```
+In questo esempio, abbiamo creato un oggetto chiamato persona con tre proprietà: `nome`, `cognome` e `eta`. Puoi accedere alle proprietà dell’oggetto utilizzando la notazione a punto o la notazione a parentesi quadre. Ad esempio:
+
+```js
+console.log(persona.nome); // "Mario"
+console.log(persona["cognome"]); // "Rossi"
+```
+
+**Esempi**
+
+```js
+const palla = {
+    colore: ['red', 'blue'],
+    tipologia: "Palla da golf"
+}
+```
+Richiesta informazione oggetto palla intero
+```js
+console.log( palla )
+```
+Richiesta informazione chiave "colore" con dot notation 
+```js
+console.log( palla['colore'] )
+```
+Richiesta informazione chiave "colore" con quadre notation
+```js
+console.log( palla.colore.includes('red') )
+```
+**Salvataggio in una variabile**
+
+Salvataggio in una variabile del valore della chiave "colore"
+```js
+let arrayColore = palla.colore
+```
+
+Utilizzo della varibaile per le funzionni con gli array
+```js
+console.log( arrayColore.includes('red') )
+```
+**tipo stringa**
+
+```js
+console.log( `Ciao ${ datoUtente }, ecco per te una bellissima ${palla.tipologia}` )
+```
+
+**sovrascrivere informaizoni delle chiavi**
+
+```js
+palla.tipologia = "Palla da basket"
+
+console.log( palla )
+```
+**arrray con oggetti**
+
+```js
+let classi = [
+    {
+       'nome' : 'Classe#1',
+       'numeroStudenti' : 10,
+       'nomeStudenti': [ 'Leonardo', "Edoardo", 'nome3' ]
+    //    'nuovaChiave' : nuovoValore
+    },
+    {
+       'nome' : 'Classe#2',
+       'numeroStudenti' : 12,
+       'nomeStudenti': [ 'Simone', 'francesca', 'nome4' ]
+    },
+];
+```
+### DESTRUTTURIZZAZIONE
+
+La destrutturizzazione degli oggetti è una sintassi di assegnazione di JavaScript che consente di estrarre i valori dalle proprietà degli oggetti e assegnarli a variabili distinte. Ad esempio, supponiamo di avere un oggetto `persona` con due proprietà: `nome` e `cognome`:
+```javascript
+const persona = {
+  nome: "Mario",
+  cognome: "Rossi"
+};
+```
+Senza la destrutturizzazione, per assegnare le proprietà dell'oggetto `persona` a due variabili distinte, dovresti fare qualcosa del genere:
+```javascript
+const nome = persona.nome;
+const cognome = persona.cognome;
+```
+Con la destrutturizzazione degli oggetti, puoi fare la stessa cosa in modo più conciso:
+```javascript
+const { nome, cognome } = persona;
+```
+In questo esempio, abbiamo estratto le proprietà `nome` e `cognome` dall'oggetto `persona` e le abbiamo assegnate alle variabili `nome` e `cognome`.
+
+Puoi anche assegnare valori predefiniti alle variabili durante la destrutturizzazione. Ad esempio:
+```javascript
+const { nome, cognome, eta = 30 } = persona;
+console.log(eta); // 30
+```
+In questo esempio, abbiamo estratto le proprietà `nome`, `cognome` e `eta` dall'oggetto `persona`. Poiché l'oggetto `persona` non ha una proprietà `eta`, viene assegnato il valore predefinito di 30 alla variabile `eta`.
+
+di esecuzione del ciclo.
+
+
+### MAP & FILTER
+
+`map` e `filter` sono due metodi degli array in JavaScript che consentono di trasformare e filtrare gli elementi di un array.
+
+Il metodo `map` crea un nuovo array con i risultati della chiamata di una funzione fornita su ogni elemento dell'array chiamante. Ad esempio:
+```javascript
+const numeri = [1, 2, 3, 4];
+const quadrati = numeri.map(numero => numero * numero);
+console.log(quadrati); // [1, 4, 9, 16]
+```
+In questo esempio, abbiamo utilizzato il metodo `map` per creare un nuovo array `quadrati` contenente i quadrati degli elementi dell'array `numeri`.
+
+Il metodo `filter`, invece, crea un nuovo array con tutti gli elementi dell'array chiamante che soddisfano una condizione specificata da una funzione fornita. Ad esempio:
+```javascript
+const numeri = [1, 2, 3, 4];
+const pari = numeri.filter(numero => numero % 2 === 0);
+console.log(pari); // [2, 4]
+```
+In questo esempio, abbiamo utilizzato il metodo `filter` per creare un nuovo array `pari` contenente solo gli elementi pari dell'array `numeri`.
+
+### SPREAD
+
+Lo spread operator (operatore di espansione) è una sintassi di JavaScript che consente di espandere un iterabile (come un array o una stringa) nei luoghi in cui sono previsti zero o più argomenti (per le chiamate di funzione) o elementi (per gli array letterali). Ad esempio:
+```javascript
+const numeri = [1, 2, 3];
+const altriNumeri = [4, 5, 6];
+const tuttiNumeri = [...numeri, ...altriNumeri];
+console.log(tuttiNumeri); // [1, 2, 3, 4, 5, 6]
+```
+In questo esempio, abbiamo utilizzato lo spread operator per espandere gli array `numeri` e `altriNumeri` e creare un nuovo array `tuttiNumeri` contenente tutti gli elementi dei due array.
+
+Lo spread operator può anche essere utilizzato per copiare un array:
+```javascript
+const numeri = [1, 2, 3];
+const copiaNumeri = [...numeri];
+console.log(copiaNumeri); // [1, 2, 3]
+```
+In questo esempio, abbiamo utilizzato lo spread operator per creare una copia superficiale dell'array `numeri`.
+
+Lo spread operator può anche essere utilizzato con gli oggetti per copiare le proprietà di un oggetto in un altro oggetto:
+```javascript
+const persona = { nome: "Mario", cognome: "Rossi" };
+const dettagli = { eta: 30, citta: "Milano" };
+const personaDettagliata = { ...persona, ...dettagli };
+console.log(personaDettagliata); // { nome: "Mario", cognome: "Rossi", eta: 30, citta: "Milano" }
+```
+In questo esempio, abbiamo utilizzato lo spread operator per copiare le proprietà degli oggetti `persona` e `dettagli` in un nuovo oggetto `personaDettagliata`.
+
+
+---
+
+## CICLO FOREACH
+
+Il metodo `forEach` è un metodo iterativo degli array in JavaScript che esegue una funzione fornita per ogni elemento dell'array. Ad esempio:
+```javascript
+const numeri = [1, 2, 3, 4];
+numeri.forEach(function(numero) {
+  console.log(numero);
+});
+// Output: 1 2 3 4
+```
+In questo esempio, abbiamo utilizzato il metodo `forEach` per eseguire una funzione per ogni elemento dell'array `numeri`. La funzione fornita come argomento al metodo `forEach` viene chiamata con tre argomenti: l'elemento corrente dell'array, l'indice dell'elemento corrente e l'array stesso.
+
+Il metodo `forEach` non restituisce alcun valore e non è concatenabile. Inoltre, non viene eseguito per gli elementi vuoti dell'array.
+
+**Quando usare `forEach` e quando il `for`**
+
+
+Il ciclo `forEach` e il ciclo `for` sono entrambi utilizzati per iterare sugli elementi di un array in JavaScript, ma ci sono alcune differenze tra i due.
+
+Il ciclo `forEach` è un metodo degli array che esegue una funzione fornita per ogni elemento dell'array. La sintassi è più concisa rispetto al ciclo `for` e non richiede l'inizializzazione di una variabile contatore o l'aggiornamento del contatore ad ogni iterazione. Tuttavia, il ciclo `forEach` non può essere interrotto utilizzando le istruzioni `break` o `continue`.
+
+Il ciclo `for`, d'altra parte, è una struttura di controllo del flusso che consente di eseguire un blocco di codice per un numero specificato di volte. La sintassi del ciclo `for` è più verbosa rispetto al ciclo `forEach`, ma offre maggiore flessibilità in termini di controllo del flusso. Ad esempio, puoi interrompere l'esecuzione del ciclo utilizzando le istruzioni `break` o `continue`.
+
+In generale, il ciclo `forEach` è più adatto per iterare sugli elementi di un array quando non è necessario interrompere l'iterazione. Il ciclo `for`, invece, è più adatto quando hai bisogno di maggiore controllo sul flusso 
+
+
+---
+
+## CLASSI IN JAVASCRIPT
+
+Le classi in JavaScript sono un modo per creare modelli per gli oggetti. Una classe definisce la forma di un oggetto e il comportamento che può avere. Le classi sono state introdotte in ECMAScript 2015 (ES6) e sono costruite su prototipi, ma hanno anche alcune sintassi e semantica uniche rispetto alle classi.
+
+Per creare una classe in JavaScript, si utilizza la parola chiave `class` seguita dal nome della classe. Il corpo della classe è racchiuso tra parentesi graffe `{}` e contiene la definizione dei membri della classe, come metodi o costruttori. Ad esempio:
+```javascript
+class Rettangolo {
+  constructor(altezza, larghezza) {
+    this.altezza = altezza;
+    this.larghezza = larghezza;
+  }
+}
+```
+In questo esempio, abbiamo creato una classe `Rettangolo` con un metodo costruttore che accetta due argomenti: `altezza` e `larghezza`. Il metodo costruttore viene chiamato automaticamente quando viene creato un nuovo oggetto utilizzando la classe `Rettangolo`.
+
+Una volta definita una classe, puoi utilizzarla per creare nuovi oggetti utilizzando la parola chiave `new`:
+```javascript
+const rettangolo = new Rettangolo(10, 20);
+console.log(rettangolo.altezza); // 10
+console.log(rettangolo.larghezza); // 20
+```
+In questo esempio, abbiamo creato un nuovo oggetto `rettangolo` utilizzando la classe `Rettangolo`. Quando viene creato il nuovo oggetto, il metodo costruttore viene chiamato automaticamente con gli argomenti forniti.
+
+
+
+
+
 
 ---
 
@@ -620,4 +875,107 @@ console.log(numbers);
         }
     }, 1000);
 ```
+
+### Alcuni esempi di utilizzo del ciclo `forEach` in JavaScript:
+
+#### 1. Calcolare la somma di tutti gli elementi di un array:
+```javascript
+const numeri = [1, 2, 3, 4];
+let somma = 0;
+numeri.forEach(function(numero) {
+  somma += numero;
+});
+console.log(somma); // 10
+```
+In questo esempio, abbiamo utilizzato il ciclo `forEach` per calcolare la somma di tutti gli elementi dell'array `numeri`.
+
+#### 2. Creare un nuovo array trasformando gli elementi di un array esistente:
+```javascript
+const numeri = [1, 2, 3, 4];
+const quadrati = [];
+numeri.forEach(function(numero) {
+  quadrati.push(numero * numero);
+});
+console.log(quadrati); // [1, 4, 9, 16]
+```
+In questo esempio, abbiamo utilizzato il ciclo `forEach` per creare un nuovo array `quadrati` contenente i quadrati degli elementi dell'array `numeri`.
+
+#### 3. Filtrare gli elementi di un array in base a una condizione:
+```javascript
+const numeri = [1, 2, 3, 4];
+const pari = [];
+numeri.forEach(function(numero) {
+  if (numero % 2 === 0) {
+    pari.push(numero);
+  }
+});
+console.log(pari); // [2, 4]
+```
+In questo esempio, abbiamo utilizzato il ciclo `forEach` per creare un nuovo array `pari` contenente solo gli elementi pari dell'array `numeri`.
+
+
+### forEach arrow function su un array di ogetti
+Ecco un esempio che mostra come utilizzare il ciclo `forEach` per iterare su un array di oggetti e accedere all'elemento corrente, all'indice corrente e all'array stesso:
+
+```javascript
+const persone = [
+  { nome: "Mario", cognome: "Rossi", eta: 30 },
+  { nome: "Luigi", cognome: "Verdi", eta: 40 },
+  { nome: "Anna", cognome: "Bianchi", eta: 50 }
+];
+
+persone.forEach((elemento, indice, array) => {
+  console.log(`Elemento ${indice}:`, elemento);
+});
+
+// Output:
+// Elemento 0: { nome: 'Mario', cognome: 'Rossi', eta: 30 }
+// Elemento 1: { nome: 'Luigi', cognome: 'Verdi', eta: 40 }
+// Elemento 2: { nome: 'Anna', cognome: 'Bianchi', eta: 50 }
+```
+In questo esempio, abbiamo un array `persone` che contiene tre oggetti. Ogni oggetto rappresenta una persona con le proprietà `nome`, `cognome` e `eta`.
+
+Utilizziamo il ciclo `forEach` per iterare su ogni elemento dell'array `persone`. All'interno del ciclo `forEach`, la funzione fornita come argomento viene chiamata con tre argomenti: l'elemento corrente dell'array, l'indice dell'elemento corrente e l'array stesso.
+
+In questo caso, utilizziamo i tre argomenti per stampare l'indice e l'elemento corrente ad ogni iterazione del ciclo.
+
+### Esempio complesso di Class
+
+Ecco un esempio più complesso che mostra come utilizzare le classi in JavaScript per creare un modello per un conto bancario:
+
+```javascript
+class ContoBancario {
+  constructor(titolare, saldoIniziale) {
+    this.titolare = titolare;
+    this.saldo = saldoIniziale;
+  }
+
+  deposita(importo) {
+    this.saldo += importo;
+    console.log(`Deposito di ${importo} euro effettuato. Nuovo saldo: ${this.saldo} euro.`);
+  }
+
+  preleva(importo) {
+    if (importo > this.saldo) {
+      console.log(`Prelevamento non possibile: saldo insufficiente.`);
+    } else {
+      this.saldo -= importo;
+      console.log(`Prelevamento di ${importo} euro effettuato. Nuovo saldo: ${this.saldo} euro.`);
+    }
+  }
+
+  visualizzaSaldo() {
+    console.log(`Il saldo del conto di ${this.titolare} è di ${this.saldo} euro.`);
+  }
+}
+
+const contoMario = new ContoBancario("Mario Rossi", 100);
+contoMario.visualizzaSaldo(); // Il saldo del conto di Mario Rossi è di 100 euro.
+contoMario.deposita(50); // Deposito di 50 euro effettuato. Nuovo saldo: 150 euro.
+contoMario.preleva(70); // Prelevamento di 70 euro effettuato. Nuovo saldo: 80 euro.
+contoMario.preleva(200); // Prelevamento non possibile: saldo insufficiente.
+```
+In questo esempio, abbiamo creato una classe `ContoBancario` con un metodo costruttore che accetta due argomenti: il `titolare` del conto e il `saldoIniziale`. La classe ha anche tre metodi: `deposita`, `preleva` e `visualizzaSaldo`, che consentono di depositare denaro sul conto, prelevare denaro dal conto e visualizzare il saldo del conto.
+
+Abbiamo quindi utilizzato la classe `ContoBancario` per creare un nuovo oggetto `contoMario` che rappresenta il conto bancario di Mario Rossi con un saldo iniziale di 100 euro. Abbiamo quindi utilizzato i metodi della classe per depositare denaro sul conto, prelevare denaro dal conto e visualizzare il saldo del conto.
 
