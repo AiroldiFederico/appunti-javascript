@@ -356,3 +356,96 @@ Questi sono solo alcuni esempi di eventi DOM comuni che puoi ascoltare utilizzan
 
 # CODICE RICORRENTE
 
+### COME CICLARE UN ARRAY
+
+Ecco alcuni esempi di come utilizzare `v-for` per ciclare un array di oggetti in Vue.js:
+
+```html
+<template>
+  <div>
+    <ul>
+      <li v-for="item in items" :key="item.id">
+        {{ item.text }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        { id: 1, text: 'Item 1' },
+        { id: 2, text: 'Item 2' },
+        { id: 3, text: 'Item 3' }
+      ]
+    }
+  }
+}
+</script>
+```
+
+In questo esempio, stiamo utilizzando `v-for` per ciclare l'array di oggetti `items` e visualizzare il testo di ogni elemento all'interno di un elemento `li`.
+
+Un altro esempio potrebbe essere quello di utilizzare `v-for` per visualizzare una tabella di dati:
+
+```html
+<template>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="user in users" :key="user.id">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      users: [
+        { id: 1, name: 'Mario Rossi', email: 'mario.rossi@example.com' },
+        { id: 2, name: 'Luigi Bianchi', email: 'luigi.bianchi@example.com' },
+        { id: 3, name: 'Anna Verdi', email: 'anna.verdi@example.com' }
+      ]
+    }
+  }
+}
+</script>
+```
+
+In questo esempio, stiamo utilizzando `v-for` per ciclare l'array di oggetti `users` e visualizzare i dati di ogni utente all'interno di una riga della tabella.
+
+### COME CREARE UNA CLASSE CONDIZIONALE
+
+Una classe condizionale in Vue.js ti permette di applicare dinamicamente una classe CSS a un elemento in base al valore di un'espressione. Puoi utilizzare l'attributo `v-bind:class` (o la sua abbreviazione `:class`) per legare un'espressione che determina quali classi applicare all'elemento.
+
+L'espressione può essere un oggetto, in cui le chiavi sono i nomi delle classi e i valori sono espressioni booleane che determinano se la classe corrispondente deve essere applicata o meno. Ad esempio:
+
+```html
+<div :class="{ active: isActive }">Testo</div>
+```
+
+In questo esempio, stiamo utilizzando una classe condizionale per applicare la classe `active` all'elemento `div` solo se la proprietà `isActive` del componente è vera.
+
+L'espressione può anche essere un array di classi, in cui ogni elemento dell'array può essere una stringa o un oggetto con la stessa sintassi dell'esempio precedente. Ad esempio:
+
+```html
+<div :class="[isActive ? 'active' : '', errorClass]">Testo</div>
+```
+
+In questo esempio, stiamo utilizzando una classe condizionale per applicare la classe `active` all'elemento `div` solo se la proprietà `isActive` del componente è vera, e per applicare la classe specificata dalla proprietà `errorClass` del componente.
+
