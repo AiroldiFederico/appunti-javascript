@@ -482,7 +482,7 @@ setTimeout(function() {
 ```
 ---
 
-##OGGETTI
+## OGGETTI
 
 Gli oggetti in JavaScript sono contenitori per valori con nome chiamati proprietà. Le proprietà possono essere di qualsiasi tipo di dato, inclusi altri oggetti e funzioni. Quando una proprietà è una funzione, viene chiamata metodo1.
 
