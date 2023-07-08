@@ -37,7 +37,7 @@ Per iniziare a usare VueJS, ci sono diversi modi possibili. Alcuni dei più comu
     <script src="./asset/js/main.js" defer></script>
 </head>
 ```
-**NEL BODY HTML DOVVIAMO INSERIRE IL DIV CON ID UNIVOCO A CUI FARÀ RIFERIMENTO VUE**
+**NEL BODY HTML DOBBIAMO INSERIRE IL DIV CON ID UNIVOCO A CUI FARÀ RIFERIMENTO VUE**
 
 ```HTML
 <body>
